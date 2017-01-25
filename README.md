@@ -2,7 +2,8 @@
 
 # Instalação
 
-Para um tutorial bastante completo, veja https://medium.com/@henriquebastos/guia-definitivo-para-organizar-meu-ambiente-python-a16e2479b753#.zdoot97pd
+Para um tutorial bastante completo,
+veja https://medium.com/@henriquebastos/guia-definitivo-para-organizar-meu-ambiente-python-a16e2479b753#.zdoot97pd
 
 Mas vão aí algumas instruções rápidas!
 
@@ -11,7 +12,7 @@ Mas vão aí algumas instruções rápidas!
 ### Ubuntu
 
 ```bash
-$ sudo apt-get install python3 python3-virtualenv python3-pip
+$ sudo apt-get install python3 python3-venv python3-pip wget
 ```
 
 ### macOS
@@ -22,12 +23,45 @@ A sugestão é usar [Anaconda][2] ou o [Homebrew][3] pra instalar.
 
 ### Windows
 
-Eu sugiro instalar o [Bash on Ubuntu on Windows][0] e seguir as instalações pra [Ubuntu][#ubuntu],
+Eu sugiro instalar o [Bash on Ubuntu on Windows][0] e seguir as instalações pra [Ubuntu](#ubuntu),
 mas você também pode instalar o [Python oficial][1] ou [Anaconda][2].
 
 ## Pip, virtualenv e dependências
 
+```bash
+$ python3 -mvenv .venv
+$ source .venv/bin/activate
+$ pip install python-telegram-bot
+```
+
+- Editar decretobot.py e adicionar o token
+
 ## Rodando o bot!
+
+### Criando um token
+
+Para criar um bot no Telegram você precisa conversar com o BotFather.
+Pra fazer isso,
+abra o Telegram e no campo de busca procure por "@BotFather".
+Pode bater um papo bacana com ele,
+mas o importante é digitar `/newbot` pra começar o processo de criação de um bot.
+Ele vai fazer algumas perguntas (qual o nome? qual vai ser o usuário?)
+e no fim dar informações sobre um **token**.
+Tome nota,
+vamos precisar disso depois!
+
+### IT'S ALIVE! (interagindo com seu bot)
+
+```bash
+$ wget https://github.com/DragoesDeGaragem/decretobot/raw/master/decretobot.py
+```
+
+Editar e adicionar o token
+
+```bash
+$ source .venv/bin/activate
+$ python decretobot.py
+```
 
 # Tarefas da semana
 
